@@ -1,0 +1,13 @@
+Cum functioneaza temperatura?
+Pasul 1:
+    - Creare State, tuplu si initial sa fie 0
+Pasul 2:
+    - Functie de transformare din celsius in fahrenheit sau invers
+Pasul 3:
+    - O functie de handle pentru temperatura schimbata cu un paramatru
+    - Creare variabila si converit event.target.value in numar
+    - Setare temperatura din state (setTemperature) cu valoarea de mai sus
+Pasul 4:
+    - Creare un input cu valoarea din primul state (temperature) cu un event onChange cu functia de handle
+    - Un div unde o sa arate functia de transformare (pasul2) cu valoarea (temperature)
+    - EX <div>Temperatura in Celsius {fahrenheitToCelsius(temperatureFahrenheit)}</div>
