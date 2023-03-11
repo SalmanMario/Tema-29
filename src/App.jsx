@@ -33,13 +33,13 @@ function App() {
   // Functie ce transforma valoare din fahrenheit in celsius
   function fahrenheitToCelsius(fahrenheit) {
     const celsius = ((fahrenheit - 32) * 5) / 9;
-    return Math.floor(celsius);
+    return celsius;
   }
 
   // Functie ce transforma valoarea din celsius in fahrenheit
   function celsiusToFahrenheit(celsius) {
     const fahrenheit = celsius * 1.8 + 32;
-    return Math.floor(fahrenheit);
+    return fahrenheit;
   }
   // multiply by 1.8 (or 9/5) and add 32.
 
