@@ -44,15 +44,17 @@ function App() {
   // multiply by 1.8 (or 9/5) and add 32.
 
   // Setare temperatura din Fahrenheit in Celsius
-  function handleTemperatureChange(event) {
-    const newTemperature = +event.target.value;
-    setTemperatureCelsius(newTemperature);
+  function handleCelsiusChange(event) {
+    const celsius = +event.target.value;
+    setTemperatureCelsius(celsius);
+    setTemperatureFahrenheit(celsiusToFahrenheit(celsius));
   }
 
   // Setare temperatura din Celsius in Fahrenheit
-  function handleTemperatureFahrenheitToCelsius(event) {
-    const fahrenheitToCelsius = +event.target.value;
-    setTemperatureFahrenheit(fahrenheitToCelsius);
+  function handleFahrenheitChange(event) {
+    const fahrenheit = +event.target.value;
+    setTemperatureFahrenheit(fahrenheit);
+    setTemperatureCelsius(fahrenheitToCelsius(fahrenheit));
   }
 
   function handleColorChange(event) {
@@ -135,14 +137,14 @@ function App() {
       </div>
 
       <label>Temperatura in Celsius</label>
-      <input type="number" value={temperatureCelsius} onChange={handleTemperatureChange} />
+      <input type="number" value={temperatureCelsius} onChange={handleCelsiusChange} />
       <div>Temperatura in Fahrenheit {celsiusToFahrenheit(temperatureCelsius)}</div>
       <button onClick={handleClick}>Contor {contor}</button>
 
       <br />
 
       <label>Temperatura in Fahrenheit</label>
-      <input type="number" value={temperatureFahrenheit} onChange={handleTemperatureFahrenheitToCelsius} />
+      <input type="number" value={temperatureFahrenheit} onChange={handleFahrenheitChange} />
       <div>Temperatura in Celsius {fahrenheitToCelsius(temperatureFahrenheit)}</div>
 
       <h2>{product.name}</h2>
