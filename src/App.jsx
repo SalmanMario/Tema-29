@@ -17,7 +17,7 @@ function App() {
   // Temperatura introdusa de utilizator (initial 0)
   const [temperatureCelsius, setTemperatureCelsius] = useState(0);
   // Temperatura fahrenheit
-  const [temperatureFahrenheit, setTemperatureFahrenheit] = useState(0);
+  const [temperatureFahrenheit, setTemperatureFahrenheit] = useState(celsiusToFahrenheit(0));
   // Afisarea dropdownului (initial ascuns)
   const [showDropdown, setShowDropdown] = useState(false);
   // produsul afisat pe ecran(Initial POCO X3 cu pretul de 800)
@@ -32,7 +32,7 @@ function App() {
 
   // Functie ce transforma valoare din fahrenheit in celsius
   function fahrenheitToCelsius(fahrenheit) {
-    const celsius = ((fahrenheit - 32) * 5) / 9;
+    const celsius = (fahrenheit - 32) / 1.8;
     return celsius;
   }
 
@@ -138,14 +138,17 @@ function App() {
 
       <label>Temperatura in Celsius</label>
       <input type="number" value={temperatureCelsius} onChange={handleCelsiusChange} />
-      <div>Temperatura in Fahrenheit {celsiusToFahrenheit(temperatureCelsius)}</div>
-      <button onClick={handleClick}>Contor {contor}</button>
+      {/* <div>Temperatura in Fahrenheit {celsiusToFahrenheit(temperatureCelsius)}</div> */}
 
       <br />
 
       <label>Temperatura in Fahrenheit</label>
       <input type="number" value={temperatureFahrenheit} onChange={handleFahrenheitChange} />
-      <div>Temperatura in Celsius {fahrenheitToCelsius(temperatureFahrenheit)}</div>
+      {/* <div>Temperatura in Celsius {fahrenheitToCelsius(temperatureFahrenheit)}</div> */}
+
+      <br />
+
+      <button onClick={handleClick}>Contor {contor}</button>
 
       <h2>{product.name}</h2>
 
